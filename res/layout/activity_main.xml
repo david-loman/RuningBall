@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.example.runingball.BallsurfaceView 
+        android:id="@+id/ballSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/addButton"
+        />
+
+    <Button 
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addButton"
+        android:text="@string/resetButton"
+        />
+</RelativeLayout>
