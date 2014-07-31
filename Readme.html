@@ -1,0 +1,29 @@
+﻿<html>
+  <head>
+  </head>
+<body>
+<h2>丧心病狂的小球（完成版）：</h2>
+</hr>
+<h3>简介：</h3>
+<p>该工程通过Eclipse完成，支持的最低版本为Android2.2。通过SurfaceView与多线程实现。由SurfaceView来管理绘图，而通过线程来分时段绘图同时小球的运动独立的运行在一个线程中。
+<h3>如何使用：</h3>
+<p>1. 通过下载源码到本地，使用Eclipse打开，通过Eclipse的调试功能，在接入计算机的真机或虚拟机中打开。
+<p>2. 下载源码，在工程的bin目录下找到RuningBall.apk；通过豌豆荚等手机助手安装，安装后打开即可使用。
+<h3>功能</h3>
+<p>软件运行过程中通过add按钮添加小球，通过reset按钮重置小球。
+<br/>在运行过程中每个新增的每个小球半径、位置、速度、颜色都随机产生。小球没有质量属性，以半径来替换之。reset会将小球清空
+而后新生成一个小球。
+<p>
+<h3>工程结构：</h3>
+<p>该工程由五个类构成，分别为Ball，Tools，MainActivity,BallsurfaceView,RuningBallThread。
+<p>Ball类:为存储球的基本信息并提供画球功能；
+<p>Tools类:用于存储程序运行中的相关数据；
+<p>BallsurfaceView类:用于画图，管理SurfaceView；
+<p>RuningBallThread类:利用线程的方式管理小球的运动；
+<p>MainActivity类:用于处理用户的交互；
+<h3>可能存在的问题：</h3>
+<p>该工程目前已经完成，不过仍然有一些小的问题，在大量的测试中发现，两个小球偶尔会出现凹陷（两个小球的球心距小于二者的半径和）
+</body>
+</html>
+
+

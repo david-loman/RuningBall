@@ -11,15 +11,18 @@ import android.util.Log;
 
 public class Ball {
 
+	//小球圆心坐标x，y
 	private int x;
 	private int y;
+	//小球在水平与素质方向上的速度
 	private int increX;
 	private int increY;
+	//小球底色
 	private int color;
+	//小球半径
 	private int radius=0;
 	private Random random;
 	private Paint paint;
-	private BallThread ballThread;
 
 	public Ball() {
 		init();
@@ -28,29 +31,17 @@ public class Ball {
 	// 初始化
 	private void init() {
 		random = new Random();
-		// 获得随机速度
-		if (!Tools.HASRADIUS) {
-			this.radius = getRandom(0, 100);
-			Tools.RADIUS=radius;
-			Tools.HASRADIUS=true;
-		}else {
-			this.radius=Tools.RADIUS;
-		}
+		// 获得随机半径
+		this.radius = getRandom(0, 50)+30;
 		// 获得随机坐标
 		this.x = getRandom(radius, Tools.WIDTH - radius);
 		this.y = getRandom(radius, Tools.HEIGHT - radius);
 		// 获得随机速度
-		this.increX = getRandom(-80, 80);
-		this.increY = getRandom(-80, 80);
+		this.increX = getRandom(-50, 50);
+		this.increY = getRandom(-50, 50);
 		// 获得随机颜色
 		this.color = Color.rgb(getRandom(0, 255), getRandom(0, 255),
 				getRandom(0, 255));
-		Log.e("Test", "x:" + x + " y:" + y + " inX:" + increX + " inY:"
-			+ increY + " R:"+radius+" color:" + color);
-		// 开始球的运动线程
-		ballThread = new BallThread(this);
-		ballThread.start();
-
 	}
 
 	// 获得随机值
@@ -65,7 +56,6 @@ public class Ball {
 		paint = new Paint();
 		paint.setColor(color);
 		paint.setAntiAlias(true);
-		Log.e("Test", "drawing x:"+x+" y:"+y+"c:"+color);
 		canvas.drawCircle(x, y, radius, paint);
 	}
 

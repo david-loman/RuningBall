@@ -1,8 +1,5 @@
 package com.example.runingball;
 
-import com.runing.ball.Ball;
-import com.runing.ball.BallThread;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.DisplayMetrics;
@@ -25,14 +22,12 @@ public class MainActivity extends Activity {
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		Tools.HASRADIUS=false;
 		
 		setContentView(R.layout.activity_main);
 		// 获取屏幕像素值
 		DisplayMetrics metrics = getResources().getDisplayMetrics();
 		Tools.WIDTH = metrics.widthPixels;
 		Tools.HEIGHT = metrics.heightPixels;
-		Log.e("Test", "WIDTH:"+Tools.WIDTH+" HEIGHT:"+Tools.HEIGHT);
 		
 		addButton =(Button)findViewById(R.id.addButton);
 		resetButton =(Button)findViewById(R.id.resetButton);
@@ -48,7 +43,7 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		
+		//增加小球
 		addButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -59,7 +54,7 @@ public class MainActivity extends Activity {
 		});
 		
 		resetButton.setOnClickListener(new View.OnClickListener() {
-			
+			//重置小球
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
